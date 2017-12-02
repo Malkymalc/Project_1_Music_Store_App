@@ -1,0 +1,94 @@
+  .img {
+    grid-area: img;
+    width: 90%;
+    border: 1vw solid black;
+  }
+
+  .title {grid-area: title;}
+  .art {grid-area: art;}
+  .gen {grid-area: gen;}
+  .buy {grid-area: buy;}
+  .sell {grid-area: sell;}
+  .mark {grid-area: mark;}
+  .stock {grid-area: stock;}
+  .lev {grid-area: lev;}
+
+  .media {
+    /*width: 20vw;
+    height: 20vw;*/
+    font-size: 1.2em;
+    /*margin: 1vw;*/
+    /*padding: 1vw;*/
+    /*width: 100%;*/
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto repeat(4, auto);
+    grid-template-areas:
+    "img   img   img      img  img   img"
+    "title title title  title title title"
+    "art art art              gen gen gen"
+    "buy buy    sell sell      mark mark "
+    "stock stock stock        lev lev lev";
+    justify-items: center;
+    align-items: flex-start;
+  }
+
+  .title {
+    font-size: 1.5em;
+  }
+  .title, .img, .art, .gen, .stock, .lev {
+    margin: 0;
+    border: 1px solid black;
+
+  }
+  .buy, .sell, .mark {
+    font-size: 1em;
+    border: 1px solid black;
+    margin: 0;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 1.5vw;
+    align-content: space-around;
+    justify-content: flex-start;
+  }
+
+@media only screen and (min-device-width : 600px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/*mobile/tablet portrait view*/
+@media only screen and (max-device-width : 1024px) and (orientation: landscape)
+{
+    .media {
+      grid-template-columns: 4fr repeat(6, 1fr);
+      grid-template-rows: repeat(4 1fr);
+      grid-template-areas:
+      "img     title title title title title title"
+      "img       art art art           gen gen gen"
+      "img     buy buy    sell sell      mark mark"
+      "img     stock stock stock       lev lev lev";
+      width: 100%;
+    }
+
+    main {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+    .img {
+      height: 20vw;
+    }
+}
+
+/*desktop only view*/
+@media only screen and (min-device-width: 1025px) {
+    main {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+  }

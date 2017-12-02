@@ -1,0 +1,47 @@
+<!-- <nav class="sub-nav">
+  <ul>
+    <li> Browse by: </li>
+    <li> <a href="#">Albums</a> </li>
+    <li> <a href="#">Artists</a> </li>
+    <li> <a href="#">Genres</a> </li>
+  </ul>
+</nav> -->
+
+<% if @display == 'grid' %>
+  <% @products.each do |product|  %>
+    <div class="media">
+      <img class="img" src="<%=product.url%>" alt="<%=product.alt%>">
+      <p class="title"><%=product.title%></p>
+      <a class="art" href="/stock/grid/artist/<%=product.artist%>"><%=product.artist%></a>
+      <a class="gen" href="/stock/grid/genre/<%=product.genre%>"><%=product.genre%></a>
+      <p class="buy">Buy: £<%=product.buy%></p>
+      <p class="sell">Sell: £<%=product.sell%></p>
+      <p class="mark">Markup: <%=product.markup%>%</p>
+      <p class="stock">Stock Level: <%=product.stock_level%></p>
+      <p class="lev">Stock #: <%=product.stock%></p>
+    </div>
+  <% end %>
+
+<% else %>
+  <table>
+    <thead>
+      <th>Product</th>    <th>Artist</th>      <th>Genre</th>
+      <th>Buy Price</th>  <th>Sell Price</th>  <th>Margin</th>
+      <th>Stock</th>    <th>Stock Count</th>
+    </thead>
+    <tbody>
+      <% @products.each do |product|  %>
+      <tr>
+          <td> <p> <%=product.title%> </p> </td>
+          <td> <a href="/stock/table/artist/<%=product.artist%>"><%=product.artist%></a> </td>
+          <td> <a href="/stock/table/genre/<%=product.genre%>"><%=product.genre%></a> </td>
+          <td> <p> <%=product.buy%> </p>      </td>
+          <td> <p> <%=product.sell%> </p>       </td>
+          <td> <p> <%=product.markup%>% </p>         </td>
+          <td> <p> <%=product.stock_level%> </p>    </td>
+          <td> <p > <%=product.stock%> </p>         </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% end %>

@@ -1,0 +1,78 @@
+<form class="add" action="/stock/confirm" method="post">
+
+  <p>1a. Select artist of new album/product, or tick box to create new artist:</p>
+
+  <!-- Make return value = artist.id to amke bulk_add easier -->
+  <select class="add" name="artist_select">
+    <option value="<%=%>"><%=%></option>
+  </select>
+
+  <input type="checkbox" name="add_artist" value="Create new artist">
+  <input type="text" name="name" value="">
+  <button type="button" name="new_artist">
+    Create new artist only
+  </button>
+
+
+  <p>1b. Select artist of new album/product, or tick box to create new artist:</p>
+
+  <!-- Make return value = genre.id to amke bulk_add easier -->
+  <select class="add" name="genre_select">
+    <option value="<%=%>"><%=%></option>
+  </select>
+
+  <input type="checkbox" name="add_genre" value="Create new genre">
+  <input type="text" name="genre" value="">
+  <button type="button" name="add_genre">
+    Create new genre only
+  </button>
+
+  <p>2. Select album of new product, or tick box to create new album:</p>
+
+  <!-- Make return value = album.id to make bulk_add easier -->
+  <select class="add" name="album_select">
+    <option value="<%=%>"><%=%></option>
+  </select>
+
+  <input type="checkbox" name="add_album" value="Create new album">
+  <input type="text" name="title" value="">
+  <input type="text" name="length" value="">
+  <button type="button" name="new_album">
+    Create new album only
+  </button>
+
+
+  <p>3. Add price and stock details for new product:</p>
+
+  <input type="text" name="type" value="album" hidden>
+
+  <input type="url" name="img_url" value="">
+  <input type="file" name="img_file" value="">
+  <input type="text" name="img_alt" value="">
+
+  <input type="text" name="stock" value="">
+
+  <input type="number" name="buy" value="">
+  <input type="number" name="sell" value="">
+
+  <button type="button" name="new_product">
+    Add new product
+  </button>
+
+</form>
+
+# Add or select artist
+  - dropdown pulling in all artists, and new artist option.
+
+# Add or select genre
+  - dropdown pulling in all genres and new genre option.
+
+#Add or select album
+
+
+Create new genre if tick box selected
+Create new artist if tick box selected
+Create new album if tick box selected artist, genre[form[existing]]
+
+Create product
+ dropdown pulling in all albums and new album option

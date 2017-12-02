@@ -1,0 +1,26 @@
+table {
+ margin: 2vw;
+ width: 98vw;
+ text-align: center;
+ border: 1px solid black;
+ border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid black;
+}
+
+thead {
+  color: white;
+  background-color: grey;
+}
+
+tbody tr:nth-child(even) {
+  background-color: lightgrey;
+}
+
+@media only screen and (max-device-width: 600px) {
+  table {
+    font-size: 0.6em;
+  }
+}

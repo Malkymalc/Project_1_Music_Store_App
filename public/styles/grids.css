@@ -1,0 +1,99 @@
+/*layout guidelines - remove once grid is working*/
+* {box-sizing: border-box;}
+
+div, form, header, nav, main, footer, aside {
+  border: 1px solid red;
+  margin: 0.5vw;
+  padding: 0.5vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header {grid-area: header;}
+nav {grid-area: nav;}
+aside {grid-area: aside;}
+main {
+  grid-area: main;
+  padding-top: 10vw;
+  padding-bottom: 10vw;
+}
+footer {grid-area: footer;}
+
+body {
+  /*height: 100vh;*/
+  border: 1px solid blue;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 10fr;
+  grid-template-areas:
+  "  main ";
+  justify-content: stretch;
+  align-items: stretch;
+  }
+
+header, nav {
+    position: fixed;
+    width: 100%;
+    height: auto;
+    background-color: grey;
+  }
+header {
+    top: 0;
+  }
+nav {
+    bottom: 0;
+  }
+
+aside, footer {
+    display: none;
+    align-items: center;
+  }
+.side-nav li {
+     display: inline-block;
+   }
+header {
+     font-size: smaller;
+   }
+
+
+ /*900-1200: tablet/landscape */
+@media only screen and (min-device-width: 600px) {
+   body {
+      grid-template-rows: 10fr;
+      grid-template-areas:
+      "main";
+    }
+  main, nav {
+    height: 10vw;
+  }
+
+  main {
+    margin-top: 5vw;
+  }
+  nav {
+    top: 5vw;
+  }
+}
+@media only screen and (min-device-width: 1400px) {
+/*600 - 900: tablet/portrait */
+/* 1200 or more: desktop */
+body {
+  grid-template-columns: 1fr 3.5fr;
+  grid-template-rows: 2.2fr 1.5fr 9fr 1fr;
+  grid-template-areas:
+  " header  header"
+  "  nav     nav  "
+  " aside    main "
+  " footer  footer";
+}
+
+aside, footer {
+}
+
+.log-in {
+  position: absolute;
+  top: 2vw;
+  right: 3vw;
+}

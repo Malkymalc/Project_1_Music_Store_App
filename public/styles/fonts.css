@@ -1,0 +1,43 @@
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+font-family: 'Monoton', cursive;
+/*font-family: 'Monofett', cursive;
+font-family: 'Revalia', cursive;
+font-family: 'Arbutus', cursive;*/
+}
+
+li {
+  font-family: 'Monoton', cursive;
+}
+
+.thin {
+  font-weight: 100;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.heavy {
+  font-weight: 800;
+}
+
+.logo {
+  position: absolute;
+  top: 5vw;
+  left: 2.5vw;
+}
+
+.location {
+  font-size: 7vw;
+  margin: auto;
+}
+
+.log-in {
+  position: absolute;
+  top: 1vw;
+  right: 1vw
+}
